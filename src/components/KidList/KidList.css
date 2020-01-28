@@ -1,0 +1,48 @@
+
+.KidList_page {
+ text-align: center;
+}
+
+.addKidButton {
+  border-radius: 15px;
+}
+
+.deleteHouseholdButton {
+  border-radius: 15px;
+}
+
+.addKidButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.deleteHouseholdButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.KidList__kid-section {
+  list-style-type: none;
+  background-color: grey;
+  color: white;
+  font-family: var(--custom-font);
+  margin-bottom: 1em;
+  width: 10em;
+
+}
+
+.Kid_Name {
+  background-color: black;
+  color: #b5b3b3;
+  display: block;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: auto;
+  margin-bottom: 8px;
+  padding: 8px 8px;
+  text-decoration: none;
+}
+
+.Kid_Name:hover {
+  color: orange;
+}

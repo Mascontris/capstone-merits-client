@@ -1,0 +1,25 @@
+.Create_household_page {
+ text-align: center;
+}
+
+.Create_household_title {
+    font-weight: 800;
+    background-color: lightgrey;
+}
+
+.Create_household_label {
+    margin-right: 10px;
+}
+
+.submit {
+    border-radius: 15px;
+}
+
+.submit:hover {
+    background-color: black;
+    color: white;
+}
+
+.Error__text {
+    color: red;
+}

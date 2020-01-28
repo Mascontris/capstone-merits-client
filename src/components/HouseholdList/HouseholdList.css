@@ -1,0 +1,27 @@
+
+.HouseholdList__list {
+  list-style-type: none;
+  /* margin: 130px 0 0; */
+  padding: 0;
+}
+
+.HouseholdList__link {
+  background-color: black;
+  color: #b5b3b3;
+  display: block;
+  align-self: center;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: auto;
+  margin-bottom: 8px;
+  max-width: 180px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.HouseholdList__link:hover {
+  color: #FFB72F;
+  cursor: pointer;
+}
+.HouseholdList__link.active {
+  background-color: #102541;
+}

@@ -1,0 +1,17 @@
+.Households_page {
+text-align: center;
+}
+
+.Create_household_button {
+border: 1px, black, solid;
+border-radius: 15px;
+}
+
+.Create_household_button:hover {
+    background-color: black;
+    color: white;
+}
+
+.Household_title {
+    text-decoration: underline;
+}

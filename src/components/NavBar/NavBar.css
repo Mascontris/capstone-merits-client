@@ -1,0 +1,15 @@
+.NavBar {
+  background-color: lightgrey;
+  text-align: center;
+}
+
+.Merits_link {
+  text-align: left;
+  margin-right: 1em;
+}
+
+.Household_name {
+  text-align: center;
+  margin-right: 1em;
+  background-color: darkgrey;
+}

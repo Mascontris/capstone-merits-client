@@ -1,15 +1,15 @@
 console.log("merit-helpers.js loaded")
 
-export const findHousehold = (households=[], loggedInHousehold) => (
- (!loggedInHousehold)
-  ? households
-  : households.find(household => household.id === loggedInHousehold)
-)
+// export const findHousehold = (households=[], id) => {
+//  return (!households || !id)
+//   ? households
+//   : households.find(household => household.id == id)
+// }
 
-export const getKidsForHousehold = (kids=[], loggedInHousehold) => (
- (!loggedInHousehold)
+export const getKidsForHousehold = (kids=[], id) => (
+ (!id)
   ? kids 
-  : kids.filter(kid => kid.household_id === loggedInHousehold)
+  : kids.filter(kid => kid.household_id == id)
 )
 
 export const findKid = (kids=[], KidName) => (
