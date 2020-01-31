@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 //import { NavLink} from 'react-router-dom'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import CircleButton from '../CircleButton/CircleButton'
-//import './KidPage.css'
+import './ActionList.css'
 
 export default class ActionList extends Component {
 
@@ -38,23 +38,23 @@ render() {
     }
     return (
     <div className='ActionPage'>
-        <h3 className='ActionPage__kid-name'>
-        <ul>
+        <ul className='Action__list'> 
         {this.props.actionList.map(action =>
-          <li key={action.id} className='KidPage__kid-section'>
-            created: {format(action.created_at, 'MMM Do YYYY')}
-            <br></br>
-            action: {action.description}
-            <br></br>
-            <button className='Kid__delete' type='button' onClick={this.handleDelete(action.id)}>
+          <li key={action.id} className='ActionPage__action'>
+            <span className='Action__created'>
+              <span className="Created">Created:</span> <span className='Created__date'>{format(action.created_at, 'MMM Do YYYY')}</span>
+            </span>
+            <span className='Action__description'>
+            <span className="Created">Description:</span> <span className='Created__date'>{action.description}</span>
+            </span>
+
+            <button className='Action__delete' type='button' onClick={this.handleDelete(action.id)}>
           {/* <FontAwesomeIcon icon='trash-alt' /> */}
-              Delete action
+              <p className="c">Delete</p>
             </button>
-            <br></br><br></br>
           </li>
         )}
       </ul>
-        </h3>
     </div>
     )}
 }

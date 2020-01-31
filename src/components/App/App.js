@@ -9,15 +9,16 @@ import Kid from "../Kid/Kid";
 import AddHousehold from "../AddHousehold/AddHousehold";
 import AddKid from "../AddKid/AddKid";
 import AddAction from "../AddAction/AddAction";
+import { setCookie } from "../../util"
 import './App.css'
-
 //import logo from '../logo.svg';
 import {
   getKidsForHousehold,
   findKid,
-  findHousehold,
+  //findHousehold,
   getActionsForKid
 } from "../../merit-helpers";
+
 //import './App.css';
 //import ErrorBoundary from '../Error'
 
@@ -66,7 +67,7 @@ class App extends Component {
   };
 
   addSelectedHousehold = name => {
-    this.setState({ selectedHousehold: name })
+    setCookie("currentHousehold", name, 30)
   }
 
   renderNavBar() {
@@ -113,8 +114,7 @@ class App extends Component {
         /> 
 
         <Route
-          exact
-          path="/households/:id"
+          exact path="/households/:id"
           render={routeProps => {
             const { id }=routeProps.match.params;
             const kidList=getKidsForHousehold(kids, id);
@@ -123,10 +123,11 @@ class App extends Component {
         />
 
         <Route
-          path="/:kid_name"
+          exact path="/kid/:kid_id"
           render={routeProps => {
-            const { kid_name } = routeProps.match.params;
-            const kid = findKid(kids, kid_name);
+            const { kid_id } = routeProps.match.params;
+            const kid = findKid(kids, kid_id);
+            console.log(kid_id)
             const actionList = getActionsForKid(actions, kid);
             return <Kid {...routeProps} kid={kid} actionList={actionList} />
           }}
@@ -154,12 +155,15 @@ class App extends Component {
         />
         
         <Route
-          path="/add-action"
+          exact path="/kid/:kid_id/add-action"
           render={routeProps => {
+            const { kid_id } = routeProps.match.params;
+            const kid = findKid(kids, kid_id);
             return (
               <AddAction
                 {...routeProps}
                 addAction = {this.addAction}
+                kid = {kid}
               />
             );
           }}

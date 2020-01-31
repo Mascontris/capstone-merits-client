@@ -11,21 +11,21 @@ export default class LandingPage extends Component {
     return (
         <div>
         <section className='LandingPage'>
-        <h2>Parent's Positive Reinforcement Tool</h2>
+        <h2>Parent Positive Reinforcement Tool</h2>
         </section>
 
         <section>
             <header>
                 <h3>Keep track of good deeds</h3>
             </header>
-            <p>Merits helps parents keep track of all the wonderful good things their kids are doing and reward's them when they have reached a set goal of good deeds.</p>
+            <p>Merits helps parents keep track of all the wonderful good things their kids are doing and rewards them when they have reached a set goal of good deeds.</p>
         </section>
 
         <section>
             <header>
                 <h3>Create a household</h3>
             </header>
-            <p>Create a new household for your family and add children that you would like to reward. You can reward them for doing chores, being kind, or just for listening.</p>
+            <p>Create a new household for your family and add names of children you would like to reward. You can reward them for doing chores, being kind, or just for listening.</p>
         </section>
 
         <section>
@@ -39,7 +39,7 @@ export default class LandingPage extends Component {
             <header>
                 <h3>Add actions to keep track of</h3>
             </header>
-            <p>Add actions your child has done that warrant a reward, collect a number of actions that can be redeemed for a prize.</p>
+            <p>Add actions that warrant a reward, collect a number of actions that can be redeemed for a prize.</p>
         </section>
     </div>
     )

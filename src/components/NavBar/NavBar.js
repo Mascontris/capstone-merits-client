@@ -1,14 +1,16 @@
 import React from 'react'
-import { NavLink} from 'react-router-dom'
+import { NavLink, Link} from 'react-router-dom'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import {faAward} from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
+import { getCookie } from "../../util"
+import { findHousehold} from "../../merit-helpers"
 
 export default function NavBar(props) {
      console.log("NavBar.js loaded")
-
-  //Make sure props are loaded
-  if(!props.households || props.households.length == 0) {
+     //Make sure props are loaded
+    
+  if(!props.households || props.households.length === 0) {
     return (
       <div className='NavBar'>
       <NavLink 
@@ -17,8 +19,9 @@ export default function NavBar(props) {
     </div>
     )
   }
-
-    return (
+  const selectedHousehold = findHousehold(props.households, getCookie("currentHousehold")).id
+    
+  return (
       <div className='NavBar'>
         <NavLink 
           className='Merits_link'
@@ -26,11 +29,17 @@ export default function NavBar(props) {
           onClick={ () => {props.addSelectedHousehold("") }}>
             Merits
         </NavLink>
-          
-        <span className='Household_name'>
-          {props.selectedHousehold}
+
+        <span >
+          <Link 
+          to={`/households/${selectedHousehold}`}
+          className='Household_name'
+          >
+          {getCookie("currentHousehold")}
+          </Link>
         </span>
-          
+        
+
         <span className="Households">
           <NavLink 
             className='Households_link'

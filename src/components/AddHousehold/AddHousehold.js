@@ -52,21 +52,24 @@ export default class AddHousehold extends Component {
 
     return (
       <div className="Create_household_page">
-        <span className="Create_household_title">Create new household</span>
-        <form onSubmit={this.handleSubmit}>
+        <span className="Create_household_title">Create New Household</span>
+        <form className="Create_household_form" onSubmit={this.handleSubmit}>
           <label className="Create_household_label">
-            Household name:
+            Household name
             <input
               type="text"
               name="newHousehold"
+              className='Create_household_input'
               value={this.state.value}
               onChange={this.handleChange}
             />
-          </label>
-          <input type="submit" className="submit" value="Submit" />
-          {this.state.errors && (
+           {this.state.errors && (
             <span className="Error__text">{this.state.errors}</span>
           )}
+          </label>
+
+          <input type="submit" className="submit" value="Save" />
+          
         </form>
       </div>
     );

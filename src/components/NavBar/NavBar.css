@@ -1,15 +1,42 @@
 .NavBar {
-  background-color: lightgrey;
+  background-color: cornflowerblue;
   text-align: center;
+  height: 2em;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 40px;
+  display: block;
+  padding-top: 15px;
 }
 
 .Merits_link {
   text-align: left;
+  vertical-align: middle;
   margin-right: 1em;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.Merits_link:hover {
+  color: #FFB72F;
 }
 
 .Household_name {
   text-align: center;
+  vertical-align: bottom;
   margin-right: 1em;
-  background-color: darkgrey;
+  color: #FFB72F;
+  text-decoration: none;
+}
+
+.Households_link {
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 40px;
+}
+
+.Households_link:hover {
+  color: #FFB72F;
 }

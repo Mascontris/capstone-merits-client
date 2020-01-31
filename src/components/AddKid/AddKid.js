@@ -75,7 +75,7 @@ export default class AddKid extends Component {
                             <input type="text" name="nameValue" value={this.state.nameValue} onChange={this.handleNameChange} />
                         </label><br></br>
                         <label>child's Date of birth:
-                            <input type="text" name="dobValue" value={this.state.dobValue} onChange={this.handleDobChange} />
+                            <input type="date" name="dobValue" value={this.state.dobValue} onChange={this.handleDobChange} />
                         </label>
 
                         <input type="submit" value="Submit" />

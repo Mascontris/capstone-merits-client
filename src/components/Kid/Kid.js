@@ -29,6 +29,20 @@ export default class Kid extends Component {
     .catch(error => console.error('Error:', error)); 
 }
 
+calculateCurrentStars = () => {
+  const { actionList } = this.props
+  let currentStars = 0
+
+  actionList.forEach(action => {
+    if(action.polarity){
+      currentStars += 1
+    } else { 
+      currentStars -= 1
+    }
+  })
+  return currentStars
+}
+
 // handleClick = (event) => {
 //   event.preventDefault();
 //   const KidUrl = `${url}//${this.props.id}`;
@@ -44,39 +58,41 @@ render() {
   console.log('Kid.js loaded')
   if(!this.props.kid || !this.props.actionList) {
     return (
-      <div></div>
+      <div>Actions loading</div>
     )
   }
   const { name, dob, current_stars, kidId } = this.props.kid
+  
+  console.log(this.props.actionList)
   return (
     <div className='Kid'>
-      <span className='Kid__name'>{name}</span>
-      <br></br>
       <button className='Kid__delete' type='button' onClick={this.handleDelete}>
           {/* <FontAwesomeIcon icon='trash-alt' /> */}
-        Remove Kid
+        Remove Child
       </button>
       
-      <Link to={{
-        pathname: '/add-action',
-        originKid: this.props.kid
-      }}>
-          <button className='Kid__add' type='button'>
-            Add Action
-          </button>
-      </Link>
-      
-      <div className='Kid__dob'>
-        <div className='Note__dates-modified'>
+      <div className='Kid__info'>
+      <span className='Kid__name'>{name}</span>
+        <div className='Kid__dob'>
           Date of birth: {format(dob, 'MMM Do YYYY')}
           {' '}
         </div>
-        <div className='Kid__stars'>
-          Current stars: {current_stars}
+        <div className='Kid__merits'>
+          Current merits: {this.calculateCurrentStars()}
         </div>
       </div>
       <main>
-        <div>
+
+      <Link to={{
+        pathname: `/kid/${this.props.kid.id}/add-action`,
+        originKid: this.props.kid
+      }}>
+          <button className='Action__add' type='button'>
+            Add Action
+          </button>
+      </Link>
+
+        <div className='Action__list'>
             <ActionList
                 kidId = {kidId}
                 actionList = {this.props.actionList}

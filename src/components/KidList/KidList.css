@@ -4,45 +4,61 @@
 }
 
 .addKidButton {
-  border-radius: 15px;
+  margin-left: 60px;
+  margin-right: 1em;
 }
 
-.deleteHouseholdButton {
-  border-radius: 15px;
+.deleteHouseholdButton, .addKidButton {
+  color: cornflowerblue;
+  border-top: none;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.addKidButton:hover {
-  background-color: black;
-  color: white;
+.addKidButton:hover, .deleteHouseholdButton:hover {
+  background-color: cornflowerblue;
+  color:aliceblue;
 }
 
-.deleteHouseholdButton:hover {
-  background-color: black;
-  color: white;
+.Kid__title {
+    display: block;
+    font-size: 2em;
+    font-weight: 800;
+    color: #FFB72F;
+    margin-right: auto;
+    margin-left: auto;
+
 }
 
 .KidList__kid-section {
   list-style-type: none;
-  background-color: grey;
+  background-color: cornflowerblue;
   color: white;
   font-family: var(--custom-font);
   margin-bottom: 1em;
   width: 10em;
-
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Kid_Name {
-  background-color: black;
-  color: #b5b3b3;
+  background-color: cornflowerblue;
+  color: #FFB72F;
   display: block;
   font-family: var(--custom-font);
+  font-weight: 600;
   font-size: 20px;
   margin: auto;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
   padding: 8px 8px;
   text-decoration: none;
 }
 
 .Kid_Name:hover {
-  color: orange;
+  color: white;
+}
+
+.KidList_merits {
+  
 }

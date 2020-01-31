@@ -1,6 +1,7 @@
 import url from '../../config'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import './AddAction.css'
 
 export default class AddAction extends Component {
 
@@ -13,13 +14,11 @@ export default class AddAction extends Component {
         this.state = {
             errors: "",
             descValue: "",
-            kid: this.props.location.originKid,
+            //kid: this.props.kid,
             polarity: ""
         };   
 
         this.handleDescChange = this.handleDescChange.bind(this);
-        this.handleGoodChange = this.handleGoodChange.bind(this);
-        this.handleBadChange = this.handleBadChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -27,13 +26,8 @@ export default class AddAction extends Component {
         this.setState({ descValue: event.target.value });
     }
 
-    handleGoodChange() {
-        this.setState({ polarity: true });
-        
-    }
-
-    handleBadChange() {
-        this.setState({ polarity: false });
+    handleChange(polarity) {
+        this.setState({ polarity });
         
     }
     
@@ -42,10 +36,11 @@ export default class AddAction extends Component {
         var KidUrl = `${url}actions`;
         var data = {
             description: this.state.descValue, 
-            kid_id: this.state.kid.id, 
+            kid_id: this.props.kid.id, 
             polarity: this.state.polarity,
         }
         
+        console.log(data)
         if (!data.description){
             this.setState({ errors: "description name field cannot be blank" })
         }
@@ -61,7 +56,7 @@ export default class AddAction extends Component {
             //(this.props)?console.log(this.props.location):""
             .then(response => {
                 this.props.addAction(response)
-                this.props.history.push(`/${this.state.kid.name}`)
+                this.props.history.push(`/kid/${this.props.kid.id}`)
             })
             .catch(error => console.error('Error:', error));
 
@@ -69,19 +64,28 @@ export default class AddAction extends Component {
     }
 
     render() {
-        console.log(this.state.kid)
+        
+        if(!this.props.kid) {
+        return (
+            <div></div>
+        )}
+
         return (
             <div>
-                {this.state.kid.name}
+                {this.props.kid.name}
                 <br></br>
                 Add Action
                 <br></br>
-                <button className="good" onClick={this.handleGoodChange}>
+
+                <label>
+                    <input type="radio" name="polarity" className="good" onClick={this.handleChange.bind(this, true)} />
                     Good
-                </button>
-                <button className="bad" onClick={this.handleBadChange}>
+                </label>
+                <span></span>
+                <label>
+                    <input type="radio" name="polarity" className="bad" onClick={this.handleChange.bind(this, false)} />
                     Bad
-                </button>
+                </label>
                     <form onSubmit={this.handleSubmit}>
                         <label>Describe action:
                             <input type="text" name="nameValue" value={this.state.descValue} onChange={this.handleDescChange} />

@@ -1,0 +1,55 @@
+
+.Action__list {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 0px;
+  
+}
+
+.ActionPage__action {
+  background-color: cornflowerblue;
+  margin-bottom: 1em;
+  text-align: left;
+  padding: 8px;
+}
+
+.Created {
+color: white;
+}
+
+.Created__date {
+  color: #FFB72F;
+}
+
+.Action__description {
+  color: white;
+  display: block;
+}
+
+.Action__delete {
+  padding:0px 0px 0px 0px;
+  text-align: center;
+  font-weight: 700;
+  width: 0px;
+  height: 0px;
+  -moz-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  transform-origin: bottom right;
+}
+
+.Action__delete:hover {
+color: #FFB72F;
+}
+
+.c {
+  width:100%;
+  height:100%;
+  position:relative;
+  Top:330px;
+  left:-35px;
+  background-color: #FFB72F;
+  display: inline-block;
+}

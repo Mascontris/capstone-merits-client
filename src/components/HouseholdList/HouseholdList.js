@@ -4,10 +4,9 @@ import "./HouseholdList.css";
 
 export default function HouseholdList(props) {
   console.log("HouseholdList.js loaded");
-
   if (!props.households) {
     return <div>Loading Households</div>;
-  }
+  } 
 
   return (
     <div className="HouseholdList">
@@ -17,8 +16,9 @@ export default function HouseholdList(props) {
             <NavLink
               className="HouseholdList__link"
               to={`/households/${household.id}`}
+              selectedhousehold={household.id}
               onClick={() => {
-                props.addSelectedHousehold(household.name);
+                props.addSelectedHousehold(household.name)
               }}
             >
               {household.name}

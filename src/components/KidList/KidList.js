@@ -36,23 +36,26 @@ export default function KidList(props) {
           originHousehold: props.match.params.id
         }}
       >
-        <button className="addKidButton">Add Kid</button>
+        <button className="addKidButton">
+          Add Kid
+        </button>
       </Link>
+
       <button className="deleteHouseholdButton" onClick={handleDelete.bind()}>
         Delete Household
       </button>
 
-      <ul>
+      <span className='Kid__title'>Children</span>
+
+      <ul className="KidList__kid_list">
         {props.kidList.map(kid => (
           <li key={kid.id} className="KidList__kid-section">
-            <NavLink className="Kid_Name" to={"/" + kid.name}>
+            <NavLink className="Kid_Name" to={"/kid/" + kid.id}>
               {kid.name}
             </NavLink>
-            <br></br>
-            <span className="KidList_stars">
-              Current stars: {kid.current_stars}
+            <span className="KidList_merits">
+              Current Merits: {kid.current_stars}
             </span>
-            <br></br>
           </li>
         ))}
       </ul>
