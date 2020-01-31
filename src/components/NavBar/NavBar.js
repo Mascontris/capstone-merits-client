@@ -19,8 +19,13 @@ export default function NavBar(props) {
     </div>
     )
   }
-  const selectedHousehold = findHousehold(props.households, getCookie("currentHousehold")).id
-    
+
+  function selectedHousehold() { 
+    const foundHousehold = findHousehold(props.households, getCookie("currentHousehold"))
+    if(foundHousehold) {
+    return selectedHousehold = findHousehold(props.households, getCookie("currentHousehold")).id
+  }}
+
   return (
       <div className='NavBar'>
         <NavLink 
@@ -32,7 +37,7 @@ export default function NavBar(props) {
 
         <span >
           <Link 
-          to={`/households/${selectedHousehold}`}
+          to={`/households/${selectedHousehold()}`}
           className='Household_name'
           >
           {getCookie("currentHousehold")}
