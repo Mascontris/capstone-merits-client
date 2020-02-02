@@ -15,7 +15,7 @@ export default function NavBar(props) {
       <div className='NavBar'>
       <NavLink 
         className='Merits_link'
-        to={'/'}>Merits </NavLink>
+        to={'/'}>Merits Loading households...</NavLink>
     </div>
     )
   }
