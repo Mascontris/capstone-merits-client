@@ -1,3 +1,7 @@
+# Merits
+###Link to the Merits App hosted on Zeit.co
+[https://capstone-merits-client.now.sh/](https://capstone-merits-client.now.sh/ "Merits App")
+
 ## Parent's Positive Reinforcement Tool
 
 ### Keep track of good deeds
@@ -11,3 +15,7 @@ Add one or more children to household to keep track of their good deeds and acti
 
 ### Add actions to keep track of
 Add actions your child has done that warrant a reward, collect a number of actions that can be redeemed for a prize.
+
+###Technology used
+HTML, CSS, REACT, PostgreSQL, Express
+
