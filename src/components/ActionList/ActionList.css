@@ -64,3 +64,9 @@ color: #FFB72F;
   background-color: #FFB72F;
   display: inline-block;
 }
+
+@media only screen and (max-width: 524px) {
+.c {
+  Top: 340px;
+}
+}
