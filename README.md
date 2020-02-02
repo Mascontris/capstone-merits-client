@@ -1,9 +1,8 @@
 # Merits
-## Link to the Merits App hosted on Zeit.co
+### Link to the Merits App hosted on Zeit.co
 [https://capstone-merits-client.now.sh/](https://capstone-merits-client.now.sh/ "Merits App")
 
 <img src="Screen Shot.png" height="30%" width="30%"/>
-
 ## Parent's Positive Reinforcement Tool
 
 ### Keep track of good deeds
