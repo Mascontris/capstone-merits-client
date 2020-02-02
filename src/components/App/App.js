@@ -11,7 +11,6 @@ import AddKid from "../AddKid/AddKid";
 import AddAction from "../AddAction/AddAction";
 import { setCookie } from "../../util"
 import './App.css'
-//import logo from '../logo.svg';
 import {
   getKidsForHousehold,
   findKid,
@@ -19,7 +18,6 @@ import {
   getActionsForKid
 } from "../../merit-helpers";
 
-//import './App.css';
 //import ErrorBoundary from '../Error'
 
 class App extends Component {
@@ -118,7 +116,7 @@ class App extends Component {
           render={routeProps => {
             const { id }=routeProps.match.params;
             const kidList=getKidsForHousehold(kids, id);
-            return <KidList {...routeProps} kidList={kidList} />
+            return <KidList {...routeProps} kidList={kidList} actionList={this.state.actions}/>
           }}
         />
 
@@ -127,7 +125,6 @@ class App extends Component {
           render={routeProps => {
             const { kid_id } = routeProps.match.params;
             const kid = findKid(kids, kid_id);
-            console.log(kid_id)
             const actionList = getActionsForKid(actions, kid);
             return <Kid {...routeProps} kid={kid} actionList={actionList} />
           }}

@@ -27,7 +27,7 @@ export default function NavBar(props) {
   }}
 
   return (
-      <div className='NavBar'>
+    <div className='NavBar'>
         <NavLink 
           className='Merits_link'
           to={'/'}
@@ -35,24 +35,18 @@ export default function NavBar(props) {
             Merits
         </NavLink>
 
-        <span >
-          <Link 
-          to={`/households/${selectedHousehold()}`}
-          className='Household_name'
-          >
-          {getCookie("currentHousehold")}
-          </Link>
-        </span>
+        <Link 
+        className='Household_name'
+        to={`/households/${selectedHousehold()}`}>
+        {getCookie("currentHousehold")}
+        </Link>
         
-
-        <span className="Households">
-          <NavLink 
-            className='Households_link'
-            to={'/Login'}
-            onClick={ () => {props.addSelectedHousehold("") }}>
-              Households
-          </NavLink>
-        </span>
+        <NavLink 
+          className='Households_link'
+          to={'/Login'}
+          onClick={ () => {props.addSelectedHousehold("") }}>
+            Households
+        </NavLink>
       </div>
     )
   }

@@ -26,3 +26,16 @@ export const getActionsForKid = (actions=[], kidId) => (
 
 export const countKidsForHousehold = (notes=[], folderId) =>  
 notes.filter(note => note.folderId === folderId).length
+
+export const calculateCurrentStars = (actionList=[]) => {
+  let currentStars = 0
+
+  actionList.forEach(action => {
+    if(action.polarity){
+      currentStars += 1
+    } else { 
+      currentStars -= 1
+    }
+  })
+  return currentStars
+}

@@ -1,6 +1,7 @@
 import url from '../../config'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import './AddKid.css'
 
 export default class AddKid extends Component {
 
@@ -69,16 +70,15 @@ export default class AddKid extends Component {
     render() {
         return (
             <div>
-                <h1>Add new child</h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>child's name:
-                            <input type="text" name="nameValue" value={this.state.nameValue} onChange={this.handleNameChange} />
-                        </label><br></br>
-                        <label>child's Date of birth:
-                            <input type="date" name="dobValue" value={this.state.dobValue} onChange={this.handleDobChange} />
+                <span className="Create_kid_title">Create new child</span>
+                    <form className='Create_kid_form' onSubmit={this.handleSubmit}>
+                        <label className='Create_kid_label'>Child's name
+                            <input className='Create_kid_input_name' type="text" name="nameValue" value={this.state.nameValue} onChange={this.handleNameChange} />
                         </label>
-
-                        <input type="submit" value="Submit" />
+                        <label className='Create_kid_label'>Date of birth
+                            <input className='Create_kid_input_dob' type="date" name="dobValue" value={this.state.dobValue} onChange={this.handleDobChange} />
+                        </label>
+                        <input className='submit' type="submit" value="Save" />
                         {this.state.errors && <span className="Error__text">{this.state.errors}</span>}
                     </form>
             </div>

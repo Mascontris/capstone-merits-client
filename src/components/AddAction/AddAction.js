@@ -15,7 +15,7 @@ export default class AddAction extends Component {
             errors: "",
             descValue: "",
             //kid: this.props.kid,
-            polarity: ""
+            polarity: true,
         };   
 
         this.handleDescChange = this.handleDescChange.bind(this);
@@ -28,7 +28,6 @@ export default class AddAction extends Component {
 
     handleChange(polarity) {
         this.setState({ polarity });
-        
     }
     
     handleSubmit(event) {
@@ -40,7 +39,6 @@ export default class AddAction extends Component {
             polarity: this.state.polarity,
         }
         
-        console.log(data)
         if (!data.description){
             this.setState({ errors: "description name field cannot be blank" })
         }
@@ -72,28 +70,43 @@ export default class AddAction extends Component {
 
         return (
             <div>
-                {this.props.kid.name}
-                <br></br>
-                Add Action
-                <br></br>
-
-                <label>
-                    <input type="radio" name="polarity" className="good" onClick={this.handleChange.bind(this, true)} />
-                    Good
-                </label>
-                <span></span>
-                <label>
-                    <input type="radio" name="polarity" className="bad" onClick={this.handleChange.bind(this, false)} />
-                    Bad
-                </label>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>Describe action:
-                            <input type="text" name="nameValue" value={this.state.descValue} onChange={this.handleDescChange} />
-                        </label><br></br>
-                        <input type="submit" value="Submit" />
+                <span className='Create_action_title'>Create new action</span>
+                <span className='Create_action_kidName'>{this.props.kid.name}</span>
+                    <form className='Create_action_form' onSubmit={this.handleSubmit}>
+                        <label className='Create_action_label'>Description</label>
+                            <textarea className='Create_action_description' type="text"  value={this.state.descValue} onChange={this.handleDescChange} />
+                            <input className='submit' type="submit" value="Save" />
                         {this.state.errors && <span className="Error__text">{this.state.errors}</span>}
                     </form>
+
+
+
+    <div className="normal-container">    
+        <div className="smile-rating-container">
+            <div className="smile-rating-toggle-container">
+                <form className="submit-rating">            
+                    <input readOnly checked={!this.state.polarity} id="meh" name="satisfaction" type="radio" /> 
+                    <input readOnly checked={this.state.polarity} id="fun" name="satisfaction" type="radio" /> 
+                    <label htmlFor="meh" className="rating-label rating-label-meh" onClick={this.handleChange.bind(this, false)}>Bad</label>
+
+                    <div className="smile-rating-toggle"></div>
+                    
+                    <div className="rating-eye rating-eye-left"></div>
+                    <div className="rating-eye rating-eye-right"></div>
+                    
+                    <div className="mouth rating-eye-bad-mouth"></div>
+                    
+                    <div className="toggle-rating-pill"></div>
+                    <label htmlFor="fun" className="rating-label rating-label-fun" onClick={this.handleChange.bind(this, true)}>Good</label>
+                </form>
             </div>
+        </div>
+    </div>  
+
+</div> 
+
         )
     }
 }
+
+

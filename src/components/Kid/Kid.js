@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 import ActionList from '../ActionList/ActionList'
+import { calculateCurrentStars } from '../../merit-helpers'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Kid.css'
 
@@ -29,31 +30,6 @@ export default class Kid extends Component {
     .catch(error => console.error('Error:', error)); 
 }
 
-calculateCurrentStars = () => {
-  const { actionList } = this.props
-  let currentStars = 0
-
-  actionList.forEach(action => {
-    if(action.polarity){
-      currentStars += 1
-    } else { 
-      currentStars -= 1
-    }
-  })
-  return currentStars
-}
-
-// handleClick = (event) => {
-//   event.preventDefault();
-//   const KidUrl = `${url}//${this.props.id}`;
-//   fetch(KidUrl, {
-//       method: 'POST',
-//   })
-//   .then( () => {
-//     window.location="/"})
-//   .catch(error => console.error('Error:', error)); 
-// }
-
 render() {
   console.log('Kid.js loaded')
   if(!this.props.kid || !this.props.actionList) {
@@ -61,9 +37,8 @@ render() {
       <div>Actions loading</div>
     )
   }
-  const { name, dob, current_stars, kidId } = this.props.kid
-  
-  console.log(this.props.actionList)
+  const { name, dob, kidId } = this.props.kid
+
   return (
     <div className='Kid'>
       <button className='Kid__delete' type='button' onClick={this.handleDelete}>
@@ -78,7 +53,7 @@ render() {
           {' '}
         </div>
         <div className='Kid__merits'>
-          Current merits: {this.calculateCurrentStars()}
+          Current merits: {calculateCurrentStars(this.props.actionList)}
         </div>
       </div>
       <main>

@@ -40,18 +40,19 @@ render() {
     <div className='ActionPage'>
         <ul className='Action__list'> 
         {this.props.actionList.map(action =>
-          <li key={action.id} className='ActionPage__action'>
+          <li key={action.id} className={`ActionPage__action_${action.polarity}`}>
             <span className='Action__created'>
               <span className="Created">Created:</span> <span className='Created__date'>{format(action.created_at, 'MMM Do YYYY')}</span>
             </span>
             <span className='Action__description'>
             <span className="Created">Description:</span> <span className='Created__date'>{action.description}</span>
             </span>
-
-            <button className='Action__delete' type='button' onClick={this.handleDelete(action.id)}>
+          <div className="Action__delete_div">
+            <button className='Action__delete' onClick={this.handleDelete(action.id)}>
           {/* <FontAwesomeIcon icon='trash-alt' /> */}
               <p className="c">Delete</p>
             </button>
+          </div>
           </li>
         )}
       </ul>

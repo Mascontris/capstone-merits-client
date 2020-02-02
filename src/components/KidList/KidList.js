@@ -1,6 +1,7 @@
 import React from "react";
 import url from "../../config";
 import { NavLink, Link } from "react-router-dom";
+import { calculateCurrentStars, getActionsForKid } from '../../merit-helpers'
 import "./KidList.css";
 
 export default function KidList(props) {
@@ -28,6 +29,8 @@ export default function KidList(props) {
     return <div>Loading Kids</div>;
   }
 
+  let List = {}
+
   return (
     <div className="KidList">
       <Link
@@ -37,7 +40,7 @@ export default function KidList(props) {
         }}
       >
         <button className="addKidButton">
-          Add Kid
+          Add Child
         </button>
       </Link>
 
@@ -54,7 +57,7 @@ export default function KidList(props) {
               {kid.name}
             </NavLink>
             <span className="KidList_merits">
-              Current Merits: {kid.current_stars}
+              Current Merits: {calculateCurrentStars(getActionsForKid(props.actionList, kid))}
             </span>
           </li>
         ))}
