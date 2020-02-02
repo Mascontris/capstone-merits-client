@@ -88,16 +88,17 @@ export default class AddAction extends Component {
                     <input readOnly checked={!this.state.polarity} id="meh" name="satisfaction" type="radio" /> 
                     <input readOnly checked={this.state.polarity} id="fun" name="satisfaction" type="radio" /> 
                     <label htmlFor="meh" className="rating-label rating-label-meh" onClick={this.handleChange.bind(this, false)}>Bad</label>
-
+            
                     <div className="smile-rating-toggle"></div>
                     
                     <div className="rating-eye rating-eye-left"></div>
                     <div className="rating-eye rating-eye-right"></div>
                     
-                    <div className="mouth rating-eye-bad-mouth"></div>
-                    
+                    <div className="mouth rating-eye-bad-mouth"></div>  
                     <div className="toggle-rating-pill"></div>
+                
                     <label htmlFor="fun" className="rating-label rating-label-fun" onClick={this.handleChange.bind(this, true)}>Good</label>
+                
                 </form>
             </div>
         </div>

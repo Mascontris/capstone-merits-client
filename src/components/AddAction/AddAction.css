@@ -12,6 +12,7 @@
 	 margin: auto;
 	 font-family: 'Roboto', sans-serif;
 	 top: 2%;
+	 
 }
  .submit-rating {
 	 display: flex;
@@ -51,6 +52,7 @@
 	 background: crimson;
 	 border-radius: 500px;
 	 transition: all 500ms;
+	 left: 0px;
 }
  .smile-rating-toggle {
 	 position: absolute;
@@ -172,6 +174,10 @@
 }
  @media only screen and (max-width: 524px) {
 	/* Toggle Changes */
+	.toggle-rating-pill {
+		left: -60px;
+   }
+
 	 .normal-container {
 		 position: absolute;
 		 height: 100%;
@@ -205,11 +211,11 @@
 		 color: #d0cccd;
 	}
 	 .rating-label-fun {
-		 left: -30px;
+		 left: -100px;
 		 text-align: right;
 	}
 	 .rating-label-meh {
-		 left: 50px;
+		 left: -5px;
 		 text-align: left;
 		 color: #222;
 	}
@@ -229,7 +235,7 @@
 		 width: 54px;
 		 height: 54px;
 		 background-color: white;
-		 left: 168px;
+		 left: 118px;
 		 border-radius: 500px;
 		 transition: all 500ms;
 		 z-index: 4;
@@ -245,10 +251,10 @@
 		 transition: all 440ms;
 	}
 	 .rating-eye-left {
-		 left: 180px;
+		 left: 130px;
 	}
 	 .rating-eye-right {
-		 left: 201px;
+		 left: 151px;
 	}
 	 .mouth {
 		 position: absolute;
@@ -261,7 +267,7 @@
 		 border-right-color: rgba(1, 1, 1, 0);
 		 border-left-color: rgba(1, 1, 1, 0);
 		 top: 42px;
-		 left: 177px;
+		 left: 127px;
 		 transition: all 500ms;
 	}
 	 #meh:checked ~ .rating-label-meh {
@@ -276,7 +282,7 @@
 		 border-right-color: rgba(1, 1, 1, 0);
 		 border-left-color: rgba(1, 1, 1, 0);
 		 top: 23px;
-		 left: 275px;
+		 left: 215px;
 		 transform: rotateX(180deg);
 		 border-radius: 100%;
 	}
@@ -284,13 +290,13 @@
 		 color: #555e63;
 	}
 	 #fun:checked ~ .smile-rating-toggle {
-		 left: 266px;
+		 left: 206px;
 	}
 	 #fun:checked ~ .rating-eye-left {
-		 left: 275px;
+		 left: 216px;
 	}
 	 #fun:checked ~ .rating-eye-right {
-		 left: 300px;
+		 left: 240px;
 	}
 	 #fun:checked ~ .toggle-rating-pill {
 		 background-color: cornflowerblue;
@@ -298,6 +304,7 @@
 	 #fun:checked ~ .rating-eye {
 		 background-color: cornflowerblue;
 	}
+
 }
  
 
@@ -313,7 +320,7 @@
     font-size: 20px;
     font-weight: 700;
     padding: 17px 20px 15px 20px;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 .Create_action_kidName {
