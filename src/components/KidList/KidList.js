@@ -29,8 +29,6 @@ export default function KidList(props) {
     return <div>Loading Kids</div>;
   }
 
-  let List = {}
-
   return (
     <div className="KidList">
       <Link

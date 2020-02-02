@@ -14,7 +14,6 @@ export default class AddAction extends Component {
         this.state = {
             errors: "",
             descValue: "",
-            //kid: this.props.kid,
             polarity: true,
         };   
 
@@ -80,7 +79,7 @@ export default class AddAction extends Component {
                     </form>
 
 
-
+{/* Generate animated radio button with face emote */}
     <div className="normal-container">    
         <div className="smile-rating-container">
             <div className="smile-rating-toggle-container">

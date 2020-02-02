@@ -1,9 +1,7 @@
 import url from '../../config'
 import React, { Component } from 'react'
 import { format } from 'date-fns'
-//import { NavLink} from 'react-router-dom'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import CircleButton from '../CircleButton/CircleButton'
 import './ActionList.css'
 
 export default class ActionList extends Component {

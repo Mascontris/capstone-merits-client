@@ -23,7 +23,7 @@ export default function NavBar(props) {
   function selectedHousehold() { 
     const foundHousehold = findHousehold(props.households, getCookie("currentHousehold"))
     if(foundHousehold) {
-    return selectedHousehold = findHousehold(props.households, getCookie("currentHousehold")).id
+    return findHousehold(props.households, getCookie("currentHousehold")).id
   }}
 
   return (
