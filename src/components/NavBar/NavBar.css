@@ -1,46 +1,89 @@
+
 .NavBar {
-  background-color: cornflowerblue;
-  text-align: center;
-  min-height: 2em;
-  width: 100%;
-  font-weight: 900;
+list-style-type: none;
+margin: 0;
+padding: 5px;
+overflow: hidden;
+background-color: cornflowerblue;
+min-height: 45px;
+width: 100%;
+font-weight: 900;
+}
+
+.MeritsLink, .HouseholdLink, .HouseholdsLink {
   text-decoration: none;
   font-size: 40px;
-  padding-top: 15px;
-
 }
 
-.Merits_link {
-  text-align: left;
-  vertical-align: middle;
-  margin-right: 1em;
-  text-decoration: none;
-  color: aliceblue;
-
+.favicon {
+  float: left;
+  margin-top: 10px;
 }
 
-.Merits_link:hover {
-  color: #FFB72F;
+.Merits {
+  display: none;
 }
 
 .Household_name {
-  text-align: center;
-  vertical-align: middle;
-  margin-right: 1em;
+  display: inline;
+}
+
+.HouseholdLink {
   color: #FFB72F;
-  text-decoration: none;
-  display: inline-block
+}
+
+.Households {
+  display: none;
 }
 
 .Households_link {
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  color: aliceblue;
-  font-size: 40px;
-  display: inline-block;
+  display: inline;
 }
 
-.Households_link:hover {
+.houseIcon {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width:524px) {
+
+  
+  .favicon {
+    display: none;
+  }
+
+  .Merits {
+    float: left;
+    display: inline;
+  }
+
+  .MeritsLink {
+    color: aliceblue;
+  }
+  
+  .MeritsLink:hover {
+    color: #FFB72F;
+  }
+
+  .houseIcon {
+    display: none;
+  }
+
+  .Households {
+  float: right;
+  display: inline;
+  margin-right: 10px;
+  }
+
+  .HouseholdsLink {
+  float: right;
+  color: aliceblue;
+  display: inline;
+}
+
+.HouseholdsLink:hover {
   color: #FFB72F;
 }
+  
+  }

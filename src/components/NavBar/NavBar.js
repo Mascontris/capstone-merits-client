@@ -1,14 +1,12 @@
 import React from 'react'
 import { NavLink, Link} from 'react-router-dom'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import {faAward} from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
 import { getCookie } from "../../util"
 import { findHousehold} from "../../merit-helpers"
+import favicon from '../../img/favicon.png'
+import houseIcon from '../../img/houseIcon.jpg'
 
 export default function NavBar(props) {
-     console.log("NavBar.js loaded")
-     //Make sure props are loaded
     
   if(!props.households || props.households.length === 0) {
     return (
@@ -27,26 +25,34 @@ export default function NavBar(props) {
   }}
 
   return (
-    <div className='NavBar'>
+    <ul className='NavBar'>
+      <li className='Merits_link'>
         <NavLink 
-          className='Merits_link'
+          className='MeritsLink'
           to={'/'}
           onClick={ () => {props.addSelectedHousehold("") }}>
-            Merits
+          <img className='favicon' src={favicon} alt='two kids' height="30px" width="30px"></img>
+            <span className="Merits">Merits</span>
         </NavLink>
+      </li>
 
+      <li className='Household_name'>
         <Link 
-        className='Household_name'
+        className='HouseholdLink'
         to={`/households/${selectedHousehold()}`}>
         {getCookie("currentHousehold")}
         </Link>
+      </li>
         
+      <li className="Households_link">
         <NavLink 
-          className='Households_link'
+          className='HouseholdsLink'
           to={'/Login'}
           onClick={ () => {props.addSelectedHousehold("") }}>
-            Households
+            <span className='Households'>Households</span>
+            <img className='houseIcon' src={houseIcon} alt='house' height="30px" width="30px"></img>
         </NavLink>
-      </div>
+      </li>
+      </ul>
     )
   }

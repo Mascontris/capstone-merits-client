@@ -1,7 +1,6 @@
 import url from '../../config'
 import React, { Component } from 'react'
 import { format } from 'date-fns'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './ActionList.css'
 
 export default class ActionList extends Component {
@@ -12,9 +11,9 @@ export default class ActionList extends Component {
   this.handleDelete = this.handleDelete.bind(this)
   };
 
+  //Handle DELETE fetch request to delete action
   handleDelete = actionId => (event) => {
     event.preventDefault();
-    console.log("Remove action clicked")
     const ActionUrl = `${url}actions/${actionId}`;
     fetch(ActionUrl, {
         method: 'DELETE', // or 'PUT'
@@ -27,8 +26,8 @@ export default class ActionList extends Component {
     .catch(error => console.error('Error:', error)); 
 }
 
+//Render a list of actions and delete button
 render() {
-    console.log("ActionList.js loaded")
     if(!this.props.actionList) {
       return (
         <div>Loading Actions</div>
@@ -47,7 +46,6 @@ render() {
             </span>
           <div className="Action__delete_div">
             <button className='Action__delete' onClick={this.handleDelete(action.id)}>
-          {/* <FontAwesomeIcon icon='trash-alt' /> */}
               <p className="c">Delete</p>
             </button>
           </div>

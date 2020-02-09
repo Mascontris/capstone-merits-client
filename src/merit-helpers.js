@@ -1,5 +1,3 @@
-console.log("merit-helpers.js loaded")
-
 export const findHousehold = (households=[], name) => {
  return (!households || !name)
   ? households

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import Note from './Kid'
+import Kid from './Kid'
 
 describe(`Note component`, () => {
   const props = {

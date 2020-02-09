@@ -39,7 +39,7 @@ export default class AddAction extends Component {
         }
         
         if (!data.description){
-            this.setState({ errors: "description name field cannot be blank" })
+            this.setState({ errors: "description field cannot be blank" })
         }
 
         else {
@@ -68,7 +68,7 @@ export default class AddAction extends Component {
         )}
 
         return (
-            <div>
+            <div className='Create_action_container'>
                 <span className='Create_action_title'>Create new action</span>
                 <span className='Create_action_kidName'>{this.props.kid.name}</span>
                     <form className='Create_action_form' onSubmit={this.handleSubmit}>

@@ -6,13 +6,11 @@ import "./KidList.css";
 
 export default function KidList(props) {
   const id = props.match.params.id;
-  console.log("KidList.js loaded");
 
+  //handles the DELETE fetch method
   function handleDelete(event) {
     event.preventDefault();
     var householdUrl = `${url}households/${id}`;
-    //var data = { name: this.state.value }
-    console.log("Delete Clicked");
 
     fetch(householdUrl, {
       method: "DELETE",
@@ -29,6 +27,7 @@ export default function KidList(props) {
     return <div>Loading Kids</div>;
   }
 
+  //Renders a list of kids and a delete household button
   return (
     <div className="KidList">
       <Link

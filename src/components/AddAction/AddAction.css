@@ -308,11 +308,12 @@
 }
  
 
-/* ********************************************* */
+/* Form styling */
 
 .Create_action_page {
  text-align: center;
 }
+
 
 .Create_action_title {
     color: white;
@@ -337,11 +338,11 @@
     background-color:cornflowerblue;
     display: block;
     max-width: 260px;
-    height: 200px;
+    height: 370px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    position: relative;
+	position: relative;
 }
 
 .Create_action_label {
@@ -367,7 +368,7 @@ textarea {
 
 .Error__text {
     color: #FFB72F;
-    display: block;
+	display: block;
 }
 
 .submit {
@@ -378,7 +379,8 @@ textarea {
     font-weight: 700;
     position: absolute;
     right: 130px;
-    bottom: 20px;
+	bottom: 20px;
+	left: 110px;
 	outline: none;
 	border-radius: none;
 }

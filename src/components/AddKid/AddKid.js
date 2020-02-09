@@ -42,13 +42,9 @@ export default class AddKid extends Component {
             current_stars: "0"
         }
         
-        if (!data.name){
-            this.setState({ errors: "child's name field cannot be blank" })
+        if (!data.name || !data.dob){
+            this.setState({ errors: `Child's Name and Date of birth fields cannot be blank` })
         }
-        if (!data.dob){
-            this.setState({ errors: "Date of birth field cannot be blank" })
-        }
-
         else {
         fetch(KidUrl, {
             method: 'POST', // or 'PUT'

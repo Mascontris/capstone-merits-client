@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./HouseholdList.css";
 
+//Renders a list of links to households
 export default function HouseholdList(props) {
-  console.log("HouseholdList.js loaded");
   if (!props.households) {
     return <div>Loading Households</div>;
   } 

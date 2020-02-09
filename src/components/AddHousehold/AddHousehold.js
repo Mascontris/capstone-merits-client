@@ -19,10 +19,12 @@ export default class AddHousehold extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //Sets value in state when name is entered
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
 
+  //Submits new household name to POST method
   handleSubmit(event) {
     event.preventDefault();
     var householdUrl = `${url}households`;
@@ -47,15 +49,15 @@ export default class AddHousehold extends Component {
     }
   }
 
+  //Render new household form.
   render() {
-    console.log("AddHousehold.js loaded");
-
     return (
       <div className="Create_household_page">
         <span className="Create_household_title">Create New Household</span>
         <form className="Create_household_form" onSubmit={this.handleSubmit}>
           <label className="Create_household_label">
             Household name
+            
             <input
               type="text"
               name="newHousehold"

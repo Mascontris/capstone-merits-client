@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 import ActionList from '../ActionList/ActionList'
 import { calculateCurrentStars } from '../../merit-helpers'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Kid.css'
 
 export default class Kid extends Component {
@@ -15,9 +14,9 @@ export default class Kid extends Component {
   this.handleDelete = this.handleDelete.bind(this)
   };
 
+  //handles the DELETE fetch method to delete current child
   handleDelete = (event) => {
     event.preventDefault();
-    console.log("Remove Kid clicked")
     const KidUrl = `${url}kids/${this.props.kid.id}`;
     fetch(KidUrl, {
         method: 'DELETE', // or 'PUT'
@@ -30,8 +29,8 @@ export default class Kid extends Component {
     .catch(error => console.error('Error:', error)); 
 }
 
+//Render a list of actions for current child selected
 render() {
-  console.log('Kid.js loaded')
   if(!this.props.kid || !this.props.actionList) {
     return (
       <div>Actions loading</div>
@@ -42,7 +41,6 @@ render() {
   return (
     <div className='Kid'>
       <button className='Kid__delete' type='button' onClick={this.handleDelete}>
-          {/* <FontAwesomeIcon icon='trash-alt' /> */}
         Remove Child
       </button>
       

@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import NoteListNav from './NoteListNav'
+import HouseholdList from './HouseholdList'
 
-describe(`NoteListNav component`, () => {
+describe(`HouseholdList component`, () => {
   const props = {
     notes: [
       {
@@ -51,13 +51,13 @@ describe(`NoteListNav component`, () => {
     ]
   }
 
-  it('renders a .NoteListNav by default', () => {
-    const wrapper = shallow(<NoteListNav />)
+  it('renders a .HouseholdList by default', () => {
+    const wrapper = shallow(<HouseholdList />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a link in ul for each folder in array', () => {
-    const ul = shallow(<NoteListNav {...props} />)
+    const ul = shallow(<HouseholdList {...props} />)
       .find('ul')
     expect(toJson(ul)).toMatchSnapshot()
   })
