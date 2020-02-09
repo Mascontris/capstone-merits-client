@@ -12,9 +12,9 @@ export default class ActionList extends Component {
   };
 
   //Handle DELETE fetch request to delete action
-  handleDelete = actionId => (event) => {
+  handleDelete(event) {
     event.preventDefault();
-    const ActionUrl = `${url}actions/${actionId}`;
+    const ActionUrl = `${url}actions/${event.currentTarget.value}`;
     fetch(ActionUrl, {
         method: 'DELETE', // or 'PUT'
         headers: {
@@ -45,7 +45,8 @@ render() {
             <span className="Created">Description:</span> <span className='Created__date'>{action.description}</span>
             </span>
           <div className="Action__delete_div">
-            <button className='Action__delete' onClick={this.handleDelete(action.id)}>
+            <button className='Action__delete' 
+              onClick={(e) => window.confirm('Are you sure you want to delete?') && this.handleDelete(e)} value={action.id}>
               <p className="c">Delete</p>
             </button>
           </div>

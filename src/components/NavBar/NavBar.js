@@ -24,6 +24,7 @@ export default function NavBar(props) {
     return findHousehold(props.households, getCookie("currentHousehold")).id
   }}
 
+  //renders top nav bar with link to merits root, currently selected household, list of households
   return (
     <ul className='NavBar'>
       <li className='Merits_link'>

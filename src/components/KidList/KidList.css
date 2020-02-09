@@ -1,11 +1,15 @@
 
+ul {
+padding: 0px;
+}
+
 .KidList_page {
  text-align: center;
 }
 
 .addKidButton {
-  margin-left: 60px;
-  margin-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .deleteHouseholdButton, .addKidButton {

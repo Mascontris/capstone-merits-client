@@ -2,6 +2,7 @@ import React from "react";
 import url from "../../config";
 import { NavLink, Link } from "react-router-dom";
 import { calculateCurrentStars, getActionsForKid } from '../../merit-helpers'
+import { setCookie } from "../../util"
 import "./KidList.css";
 
 export default function KidList(props) {
@@ -19,6 +20,7 @@ export default function KidList(props) {
       }
     })
       .then(res => res.json())
+      .then(setCookie("currentHousehold", ""))
       .then(props.history.push("/Login"), window.location.reload())
       .catch(error => console.error("Error:", error));
   }
@@ -41,7 +43,7 @@ export default function KidList(props) {
         </button>
       </Link>
 
-      <button className="deleteHouseholdButton" onClick={handleDelete.bind()}>
+      <button className="deleteHouseholdButton" onClick={(e) => window.confirm('Are you sure you want to delete?') && handleDelete(e)}>
         Delete Household
       </button>
 

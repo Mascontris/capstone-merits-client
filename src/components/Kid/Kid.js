@@ -40,7 +40,8 @@ render() {
 
   return (
     <div className='Kid'>
-      <button className='Kid__delete' type='button' onClick={this.handleDelete}>
+      <button className='Kid__delete' type='button' 
+        onClick={(e) => window.confirm('Are you sure?') && this.handleDelete(e)}>
         Remove Child
       </button>
       

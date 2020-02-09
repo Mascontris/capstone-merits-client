@@ -50,7 +50,6 @@ export default class AddAction extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => res.json())
-            //(this.props)?console.log(this.props.location):""
             .then(response => {
                 this.props.addAction(response)
                 this.props.history.push(`/kid/${this.props.kid.id}`)
@@ -66,7 +65,7 @@ export default class AddAction extends Component {
         return (
             <div></div>
         )}
-
+// render new action form with description
         return (
             <div className='Create_action_container'>
                 <span className='Create_action_title'>Create new action</span>

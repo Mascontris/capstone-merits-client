@@ -14,11 +14,8 @@ import './App.css'
 import {
   getKidsForHousehold,
   findKid,
-  //findHousehold,
   getActionsForKid
 } from "../../merit-helpers";
-
-//import ErrorBoundary from '../Error'
 
 class App extends Component {
   state = {
@@ -38,6 +35,7 @@ class App extends Component {
     return fetch(`${url}${endpoint}`).then(res => res.json());
   }
 
+  //load data from postgreSQL database
   loadData() {
     const fetchArray = ["households", "kids", "actions"];
     const fetchRequests = fetchArray.map(endpoint => this.fetchData(endpoint));
@@ -54,16 +52,20 @@ class App extends Component {
       .catch(error => console.error(`Error:`, error));
   }
 
+  //Set list of households to state
   addHousehold = household => {
     this.setState({ households: [...this.state.households, household] });
   };
+  //Set list of kids to state
   addKid = kid => {
     this.setState({ kids: [...this.state.kids, kid] });
   };
+  //set list of actions to state
   addAction = action => {
     this.setState({ actions: [...this.state.actions, action] });
   };
 
+  //set currently selected household to local brower cookie
   addSelectedHousehold = name => {
     setCookie("currentHousehold", name, 30)
   }
@@ -172,14 +174,12 @@ class App extends Component {
 
   render() {
     return (
-      //<ErrorBoundary>
       <div className="App">
         <nav className="App__nav">{this.renderNavBar()}</nav>
         <main className="App__main">
           {this.renderMainRoutes()}
         </main>
       </div>
-      //</ErrorBoundary>
     );
   }
 }

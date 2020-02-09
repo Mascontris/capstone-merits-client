@@ -32,6 +32,7 @@ export default class AddKid extends Component {
         
     }
     
+    //Handle submit event to POST new kid
     handleSubmit(event) {
         event.preventDefault();
         var KidUrl = `${url}kids`;
@@ -53,7 +54,6 @@ export default class AddKid extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => res.json())
-            //(this.props)?console.log(this.props.location):""
             .then(response => {
                 this.props.addKid(response)
                 this.props.history.push(`/households/${data.household_id}`)
@@ -63,6 +63,7 @@ export default class AddKid extends Component {
         }
     }
 
+    //render form to add child to household list, needs name and date of birth
     render() {
         return (
             <div>
