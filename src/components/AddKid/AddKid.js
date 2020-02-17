@@ -6,7 +6,7 @@ import './AddKid.css'
 export default class AddKid extends Component {
 
     static propTypes = {
-        addKid: PropTypes.func.isRequired
+        addKid: PropTypes.func
     };
     
     constructor(props) {

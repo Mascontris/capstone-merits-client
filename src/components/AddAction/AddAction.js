@@ -6,7 +6,7 @@ import './AddAction.css'
 export default class AddAction extends Component {
 
     static propTypes = {
-        addAction: PropTypes.func.isRequired
+        addAction: PropTypes.func
     };
     
     constructor(props) {

@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink, Link} from 'react-router-dom'
-import './NavBar.css'
 import { getCookie } from "../../util"
 import { findHousehold} from "../../merit-helpers"
 import favicon from '../../img/favicon.png'
 import houseIcon from '../../img/houseIcon.jpg'
+import './NavBar.css'
 
 export default function NavBar(props) {
     

@@ -1,6 +1,6 @@
 import url from "../../config";
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import LandingPage from "../../routes/LandingPage/LandingPage"
 import LoginPage from "../../routes/LoginPage/LoginPage"
@@ -73,13 +73,8 @@ class App extends Component {
   renderNavBar() {
     const { households, selectedHousehold } = this.state;
     return (
-      <Route
-        exact
-        render={routeProps => (
-          <NavBar addSelectedHousehold={this.addSelectedHousehold} selectedHousehold={selectedHousehold} households={households} {...routeProps} />
-        )}
-      />
-    );
+          <NavBar addSelectedHousehold={this.addSelectedHousehold} selectedHousehold={selectedHousehold} households={households} />
+          )
   }
 
   renderMainRoutes() {
@@ -174,10 +169,13 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="App">
         <nav className="App__nav">{this.renderNavBar()}</nav>
         <main className="App__main">
-          {this.renderMainRoutes()}
+          <BrowserRouter>
+            {this.renderMainRoutes()}
+          </BrowserRouter>
         </main>
       </div>
     );

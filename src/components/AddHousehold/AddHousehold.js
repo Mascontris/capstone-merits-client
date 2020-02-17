@@ -5,7 +5,7 @@ import "./AddHousehold.css";
 
 export default class AddHousehold extends Component {
   static propTypes = {
-    addHousehold: PropTypes.func.isRequired
+    addHousehold: PropTypes.func
   };
 
   constructor(props) {
