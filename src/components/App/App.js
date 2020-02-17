@@ -1,6 +1,6 @@
 import url from "../../config";
 import React, { Component } from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import LandingPage from "../../routes/LandingPage/LandingPage"
 import LoginPage from "../../routes/LoginPage/LoginPage"
@@ -173,9 +173,9 @@ class App extends Component {
       <div className="App">
         <nav className="App__nav">{this.renderNavBar()}</nav>
         <main className="App__main">
-          <BrowserRouter>
-            {this.renderMainRoutes()}
-          </BrowserRouter>
+          
+          {this.renderMainRoutes()}
+          
         </main>
       </div>
     );
