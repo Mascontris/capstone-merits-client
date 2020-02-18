@@ -39,7 +39,7 @@ export default function NavBar(props) {
 
       <li className='Household_name'>
         <Link 
-        className='HouseholdLink'
+        className='HouseholdNameLink'
         to={`/households/${selectedHousehold()}`}>
         {getCookie("currentHousehold")}
         </Link>

@@ -3,16 +3,16 @@
 list-style-type: none;
 margin: 0;
 padding: 5px;
-overflow: hidden;
+/* overflow: hidden; */
 background-color: cornflowerblue;
 min-height: 45px;
 width: 100%;
 font-weight: 900;
+font-size: 40px;
 }
 
-.MeritsLink, .HouseholdLink, .HouseholdsLink {
+.MeritsLink, .HouseholdNameLink, .HouseholdsLink {
   text-decoration: none;
-  font-size: 40px;
 }
 
 .favicon {
@@ -24,20 +24,26 @@ font-weight: 900;
   display: none;
 }
 
+.Merits_link {
+  display: inline;
+  float: left;
+}
+
 .Household_name {
   display: inline;
 }
 
-.HouseholdLink {
+.HouseholdNameLink {
   color: #FFB72F;
-}
-
-.Households {
-  display: none;
 }
 
 .Households_link {
   display: inline;
+  float: right;
+}
+
+.Households {
+  display: none;
 }
 
 .houseIcon {
@@ -46,8 +52,7 @@ font-weight: 900;
   margin-right: 10px;
 }
 
-@media screen and (min-width:560px) {
-
+@media screen and (min-width:720px) {
   
   .favicon {
     display: none;
@@ -68,6 +73,10 @@ font-weight: 900;
 
   .houseIcon {
     display: none;
+  }
+
+  .Household_name {
+    margin-left: 120px;
   }
 
   .Households {
