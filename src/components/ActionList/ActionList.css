@@ -46,7 +46,7 @@ button:focus {
 }
 
 .Action__delete_div {
-  margin-left: 309px;
+  margin-left: 90%;
 }
 
 .c_true, .c_false {
@@ -59,10 +59,4 @@ button:focus {
 
 .c_true:hover, .c_false:hover {
 color: #FFB72F;
-}
-
-@media only screen and (max-width: 524px) {
-.c_true, .c_false {
-  Top: 200px;
-}
 }
