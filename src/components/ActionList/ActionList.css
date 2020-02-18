@@ -34,20 +34,35 @@ color: white;
   display: block;
 }
 
-.Action__delete_div {
-  margin-left: 280px;
+button:focus {
+  border: none;
+  outline: none;
 }
 
-.c {
+.Action__delete, .safari_only {
+  padding: 0px;
+  transform: rotate(90deg);
+  margin-bottom: 12px;
+}
+
+.Action__delete_div {
+  margin-left: 309px;
+}
+
+.c_true, .c_false {
   font-weight: 700;
 }
 
-.c:hover {
+.c_false {
+  background-color: crimson;
+}
+
+.c_true:hover, .c_false:hover {
 color: #FFB72F;
 }
 
 @media only screen and (max-width: 524px) {
-.c {
+.c_true, .c_false {
   Top: 200px;
 }
 }

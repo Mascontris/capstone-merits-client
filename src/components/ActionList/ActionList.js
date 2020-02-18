@@ -47,7 +47,7 @@ render() {
           <div className="Action__delete_div">
             <button className='Action__delete, safari_only' 
               onClick={(e) => window.confirm('Are you sure you want to delete?') && this.handleDelete(e)} value={action.id}>
-              <div className="c">Delete</div>
+              <div className={`c_${action.polarity}`}>Delete</div>
             </button>
           </div>
           </li>
