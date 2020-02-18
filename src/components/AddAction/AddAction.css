@@ -378,9 +378,8 @@ textarea {
     font-size: large;
     font-weight: 700;
     position: absolute;
-    right: 130px;
-	bottom: 20px;
-	left: 110px;
+	margin-right: -20px;
+	left: 40%;
 	outline: none;
 	border-radius: none;
 }
@@ -389,15 +388,5 @@ textarea {
     background-color: cornflowerblue;
     color: white;
     cursor: pointer;
-}
-
-@supports (overflow:-webkit-marquee) and (justify-content:inherit) 
-{
-
-  .safari_only {
-    color:#0000FF; 
-    background-color:#CCCCCC; 
-  }
-
 }
 

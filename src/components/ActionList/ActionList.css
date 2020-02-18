@@ -39,7 +39,7 @@ button:focus {
   outline: none;
 }
 
-.Action__delete, .safari_only {
+.Action__delete {
   padding: 0px;
   transform: rotate(90deg);
   margin-bottom: 12px;
@@ -65,14 +65,4 @@ color: #FFB72F;
 .c_true, .c_false {
   Top: 200px;
 }
-}
-
-@supports (overflow:-webkit-marquee) and (justify-content:inherit) 
-{
-
-  .safari_only {
-    color:#0000FF; 
-    background-color:#CCCCCC; 
-  }
-
 }
