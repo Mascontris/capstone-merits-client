@@ -391,5 +391,13 @@ textarea {
     cursor: pointer;
 }
 
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) 
+{
 
+  .safari_only {
+    color:#0000FF; 
+    background-color:#CCCCCC; 
+  }
+
+}
 

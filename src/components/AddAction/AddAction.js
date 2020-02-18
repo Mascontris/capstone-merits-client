@@ -73,7 +73,7 @@ export default class AddAction extends Component {
                     <form className='Create_action_form' onSubmit={this.handleSubmit}>
                         <label className='Create_action_label'>Description</label>
                             <textarea className='Create_action_description' type="text"  value={this.state.descValue} onChange={this.handleDescChange} />
-                            <input className='submit' type="submit" value="Save" />
+                            <input className='submit, safari_only' type="submit" value="Save" />
                         {this.state.errors && <span className="Error__text">{this.state.errors}</span>}
                     </form>
 
