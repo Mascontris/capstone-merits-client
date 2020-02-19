@@ -349,6 +349,8 @@
    }
 }
 
+
+
 @media only screen and (max-width: 375px) {
 	.toggle-rating-pill {
 		left: 0px;
@@ -357,31 +359,67 @@
 		left: 5px;
    }
 	.rating-label-meh {
-		left: 10px;
+		left: 0px;
    }
 	.smile-rating-toggle {
-		left: 115px;
+		left: 110px;
 	}
 	.rating-eye-left {
-		left: 128px;
+		left: 118px;
    }
 	.rating-eye-right {
-		left: 148px;
+		left: 145px;
    }
 	.mouth {
-		left: 123px;
+		left: 118px;
 	}
 	#fun:checked ~ .mouth {
-		left: 210px;	
+		left: 185px;	
 	}
 	#fun:checked ~ .smile-rating-toggle {
-		left: 200px;
+		left: 175px;
    }
 	#fun:checked ~ .rating-eye-left {
-		left: 215px;
+		left: 190px;
    }
 	#fun:checked ~ .rating-eye-right {
-		left: 235px;
+		left: 210px;
+   }
+}
+
+@media only screen and (max-width: 340px) {
+	.toggle-rating-pill {
+		left: 0px;
+   }
+	.rating-label-fun {
+		left: 5px;
+   }
+	.rating-label-meh {
+		left: -5px;
+   }
+	.smile-rating-toggle {
+		left: 90px;
+	}
+	.rating-eye-left {
+		left: 100px;
+   }
+	.rating-eye-right {
+		left: 120px;
+   }
+	.mouth {
+		left: 98px;
+	}
+	#fun:checked ~ .mouth {
+		left: 185px;	
+	}
+	#fun:checked ~ .smile-rating-toggle {
+		left: 175px;
+   }
+	#fun:checked ~ .rating-eye-left {
+		left: 190px;
+   }
+	#fun:checked ~ .rating-eye-right {
+		left: 210px;
    }
 }
 
@@ -406,6 +444,42 @@
    }
 	.mouth {
 		left: 87px;
+	}
+	#fun:checked ~ .mouth {
+		left: 175px;	
+	}
+	#fun:checked ~ .smile-rating-toggle {
+		left: 167px;
+   }
+	#fun:checked ~ .rating-eye-left {
+		left: 180px;
+   }
+	#fun:checked ~ .rating-eye-right {
+		left: 200px;
+   }
+}
+
+@media only screen and (max-width: 300px) {
+	.toggle-rating-pill {
+		left: 0px;
+   }
+	.rating-label-fun {
+		left: 5px;
+   }
+	.rating-label-meh {
+		left: -5px;
+   }
+	.smile-rating-toggle {
+		left: 65px;
+	}
+	.rating-eye-left {
+		left: 75px;
+   }
+	.rating-eye-right {
+		left: 98px;
+   }
+	.mouth {
+		left: 73px;
 	}
 	#fun:checked ~ .mouth {
 		left: 175px;	
