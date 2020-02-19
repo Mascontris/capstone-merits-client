@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
- .normal-container {
+
+:root {
+	--right-shift: 40;
+	--left-shift: -40;
+}
+
+.normal-container {
 	 position: absolute;
 	 height: 100%;
 	 width: 100%;
@@ -175,7 +181,7 @@
  @media only screen and (max-width: 524px) {
 	/* Toggle Changes */
 	.toggle-rating-pill {
-		left: -60px;
+		left: 0px;
    }
 
 	 .normal-container {
@@ -186,7 +192,7 @@
 	 .smile-rating-container {
 		 position: relative;
 		 height: 10%;
-		 width: 490px;
+		 width: 100%;
 		 margin: auto;
 		 font-family: 'Roboto', sans-serif;
 		 top: 2%;
@@ -211,7 +217,7 @@
 		 color: #d0cccd;
 	}
 	 .rating-label-fun {
-		 left: -100px;
+		 left: 10px;
 		 text-align: right;
 	}
 	 .rating-label-meh {
@@ -235,7 +241,7 @@
 		 width: 54px;
 		 height: 54px;
 		 background-color: white;
-		 left: 118px;
+		 left: 105px;
 		 border-radius: 500px;
 		 transition: all 500ms;
 		 z-index: 4;
@@ -251,10 +257,10 @@
 		 transition: all 440ms;
 	}
 	 .rating-eye-left {
-		 left: 130px;
+		 left: 115px;
 	}
 	 .rating-eye-right {
-		 left: 151px;
+		 left: 138px;
 	}
 	 .mouth {
 		 position: absolute;
@@ -267,7 +273,7 @@
 		 border-right-color: rgba(1, 1, 1, 0);
 		 border-left-color: rgba(1, 1, 1, 0);
 		 top: 42px;
-		 left: 127px;
+		 left: 113px;
 		 transition: all 500ms;
 	}
 	 #meh:checked ~ .rating-label-meh {
@@ -282,7 +288,7 @@
 		 border-right-color: rgba(1, 1, 1, 0);
 		 border-left-color: rgba(1, 1, 1, 0);
 		 top: 23px;
-		 left: 215px;
+		 left: 205px;
 		 transform: rotateX(180deg);
 		 border-radius: 100%;
 	}
@@ -290,13 +296,13 @@
 		 color: #555e63;
 	}
 	 #fun:checked ~ .smile-rating-toggle {
-		 left: 206px;
+		 left: 197px;
 	}
 	 #fun:checked ~ .rating-eye-left {
-		 left: 216px;
+		 left: 210px;
 	}
 	 #fun:checked ~ .rating-eye-right {
-		 left: 240px;
+		 left: 230px;
 	}
 	 #fun:checked ~ .toggle-rating-pill {
 		 background-color: cornflowerblue;
@@ -306,6 +312,115 @@
 	}
 
 }
+
+@media only screen and (max-width: 414px) {
+	.toggle-rating-pill {
+		left: 0px;
+   }
+	.rating-label-fun {
+		left: 0px;
+   }
+	.rating-label-meh {
+		left: 10px;
+   }
+	.smile-rating-toggle {
+		left: 135px;
+	}
+	.rating-eye-left {
+		left: 147px;
+   }
+	.rating-eye-right {
+		left: 168px;
+   }
+	.mouth {
+		left: 143px;
+	}
+	#fun:checked ~ .mouth {
+		left: 236px;	
+	}
+	#fun:checked ~ .smile-rating-toggle {
+		left: 227px;
+   }
+	#fun:checked ~ .rating-eye-left {
+		left: 240px;
+   }
+	#fun:checked ~ .rating-eye-right {
+		left: 260px;
+   }
+}
+
+@media only screen and (max-width: 375px) {
+	.toggle-rating-pill {
+		left: 0px;
+   }
+	.rating-label-fun {
+		left: 5px;
+   }
+	.rating-label-meh {
+		left: 10px;
+   }
+	.smile-rating-toggle {
+		left: 115px;
+	}
+	.rating-eye-left {
+		left: 128px;
+   }
+	.rating-eye-right {
+		left: 148px;
+   }
+	.mouth {
+		left: 123px;
+	}
+	#fun:checked ~ .mouth {
+		left: 210px;	
+	}
+	#fun:checked ~ .smile-rating-toggle {
+		left: 200px;
+   }
+	#fun:checked ~ .rating-eye-left {
+		left: 215px;
+   }
+	#fun:checked ~ .rating-eye-right {
+		left: 235px;
+   }
+}
+
+@media only screen and (max-width: 320px) {
+	.toggle-rating-pill {
+		left: 0px;
+   }
+	.rating-label-fun {
+		left: 5px;
+   }
+	.rating-label-meh {
+		left: -5px;
+   }
+	.smile-rating-toggle {
+		left: 78px;
+	}
+	.rating-eye-left {
+		left: 90px;
+   }
+	.rating-eye-right {
+		left: 110px;
+   }
+	.mouth {
+		left: 87px;
+	}
+	#fun:checked ~ .mouth {
+		left: 175px;	
+	}
+	#fun:checked ~ .smile-rating-toggle {
+		left: 167px;
+   }
+	#fun:checked ~ .rating-eye-left {
+		left: 180px;
+   }
+	#fun:checked ~ .rating-eye-right {
+		left: 200px;
+   }
+}
+
  
 
 /* Form styling */
